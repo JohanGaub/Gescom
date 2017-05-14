@@ -1,0 +1,51 @@
+{% extends ('@Gescom/base.html.twig') %}
+
+{% block body %}
+
+    <div class="container">
+
+        <div class="col s8 offset-s2">
+            <h4 class="center-align">Produits</h4>
+        </div>
+
+    <div class="valign-wrapper col s8 offset-s2">
+        <table class="striped responsive-table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Catégorie</th>
+                <th>Fournisseur</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.category }}</td> {#correction = product.category.name#}
+                    <td>
+                        {% for supplier in product.productSuppliers %}
+                            {{ supplier.supplier.name }}
+                            {% if false == loop.last %}
+                                ,&nbsp;
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="row center-align">
+        <div class="col s8 offset-s2">
+            <a href="{{ path('addproduct') }}" class="btn-floating btn-large waves-effect waves-light red pulse"><i class="material-icons">add</i></a>
+        </div>
+    </div>
+
+{% endblock body %}

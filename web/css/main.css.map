@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAU;EACR,KAAK,EAAE,IAAI",
+"sources": ["../../src/GescomBundle/Resources/public/sass/_list.scss"],
+"names": [],
+"file": "main.css"
+}

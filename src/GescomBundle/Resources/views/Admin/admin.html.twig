@@ -1,0 +1,16 @@
+{% extends ('@Gescom/base.html.twig') %}
+
+{% block body %}
+    <div class="row margeTop">
+        <div class="col s12 center-align">
+            <h5>Administration</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s8 offset-s2">
+            {{ form(security) }}
+        </div>
+    </div>
+
+{% endblock body %}

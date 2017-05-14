@@ -1,0 +1,46 @@
+{% extends ('@Gescom/base.html.twig') %}
+
+{% block body %}
+
+    <div class="row margeTop">
+        <div class="col s8 offset-s2">
+            <h4 class="center-align">Fournisseurs</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="valign-wrapper col s8 offset-s2">
+            <table class="striped responsive-table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Code postal</th>
+                    <th>Ville</th>
+                    <th>Délai de livraison</th>
+                    <th>Note</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for supplier in suppliers %}
+                    <tr>
+                        <td>{{ supplier.id }}</td>
+                        <td>{{ supplier.name }}</td>
+                        <td>{{ supplier.postcode }}</td>
+                        <td>{{ supplier.town }}</td>
+                        <td>{{ supplier.deliveryDelay }}</td>
+                        <td>{{ supplier.score }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row center-align">
+        <div class="col s8 offset-s2">
+            <a href="{{ path('addsupplier') }}" class="btn-floating btn-large waves-effect waves-light red pulse"><i class="material-icons">add</i></a>
+        </div>
+    </div>
+
+{% endblock body %}
