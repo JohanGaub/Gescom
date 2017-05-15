@@ -29,7 +29,7 @@ class ProductController extends Controller
      */
     public function addAction(Request $request)
     {
-        // create a damned product from my ass
+        // create a product
         $product = new Product();
         $em = $this->getDoctrine()->getManager();
 
